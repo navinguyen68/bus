@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Street {
@@ -7,6 +9,8 @@ public class Street {
     private int distance;
     private int stopNumber;
     public static int Auto_idStreet = 1000;
+    List<Street> streets = new ArrayList<>();
+    public Street(){}
 
     public Street(int idStreet, int distance, int stopNumber) {
         this.idStreet = idStreet;
@@ -40,9 +44,23 @@ public class Street {
     public void inputStreet(){
         System.out.println("Nhap ma tuyen duong: ");
         this.idStreet = Auto_idStreet++;
+        this.setIdStreet(new Scanner(System.in).nextInt());
         System.out.println("Nhap khoang cach: ");
         this.setDistance(new Scanner(System.in).nextInt());
         System.out.println("Nhap so diem dung: ");
         this.setStopNumber(new Scanner(System.in).nextInt());
+    }
+
+    @Override
+    public String toString() {
+        return "Street{" +
+                "idStreet=" + idStreet +
+                ", distance=" + distance +
+                ", stopNumber=" + stopNumber +
+                ", streets=" + streets +
+                '}';
+    }
+    public void showStreet() {
+        System.out.printf("%-5d %-20s %-15s %-15s \n", idStreet, distance, stopNumber, streets);
     }
 }

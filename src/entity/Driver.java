@@ -1,9 +1,10 @@
 package entity;
 
+import constant.LevelDriver;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
 
 public class Driver {
     private int id;
@@ -12,6 +13,9 @@ public class Driver {
     private String address;
     private int numberphone;
     private String level;
+    public Driver (int i) {}
+
+
 
     public Driver(int id, String name, String address, int numberphone, String level) {
         this.id = id;
@@ -19,6 +23,9 @@ public class Driver {
         this.address = address;
         this.numberphone = numberphone;
         this.level = level;
+    }
+
+    public Driver(Driver driver) {
     }
 
     public int getId() {
@@ -61,8 +68,10 @@ public class Driver {
         this.level = level;
     }
     public void inputinfo(){
+        List<Driver> drivers = new ArrayList<>();
         System.out.println("Nhap ma id lai xe: ");
         this.id = Auto_id++;
+        this.setId(new Scanner(System.in).nextInt());
         System.out.println("Nhap ten lai xe: ");
         this.setName(new Scanner(System.in).nextLine());
         System.out.println("Nhap dia chi lai xe: ");
@@ -71,9 +80,21 @@ public class Driver {
         this.setNumberphone(new Scanner(System.in).nextInt());
         System.out.println("Nhap trinh do lai xe: ");
         this.inputDriverType();
+
     }
 
-        public void inputDriverType(){
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", numberphone=" + numberphone +
+                ", level='" + level + '\'' +
+                '}';
+    }
+
+    public void inputDriverType(){
         System.out.println("Chon loai trinh do lai xe: ");
         System.out.println("1. Loai A");
         System.out.println("2. Loai B");
@@ -84,32 +105,39 @@ public class Driver {
         int choose = 0;
         do {
             choose = new Scanner(System.in).nextInt();
-            if (choose >= 1 && choose > 6) {
+            if (choose >= 1 && choose <= 6) {
                 break;
             }
             System.out.println("Lua chon khong hop le, vui long chon lai");
         } while (true);
         switch (choose){
             case 1:
-                this.setLevel("A");
+                this.setLevel(LevelDriver.Loai_A.value);
+                System.out.println("Loai A");
                 break;
             case 2:
-                this.setLevel("B");
+                this.setLevel(LevelDriver.Loai_B.value);
+                System.out.println("Loai B");
                 break;
             case 3:
-                this.setLevel("C");
+                this.setLevel(LevelDriver.Loai_C.value);
+                System.out.println("Loai C");
                 break;
             case 4:
-                this.setLevel("D");
+                this.setLevel(LevelDriver.Loai_D.value);
+                System.out.println("Loai D");
                 break;
             case 5:
-                this.setLevel("E");
+                this.setLevel(LevelDriver.Loai_E.value);
+                System.out.println("Loai E");
                 break;
             case 6:
-                this.setLevel("F");
+                this.setLevel(LevelDriver.Loai_F.value);
+                System.out.println("Loai F");
                 break;
-        }
+        }}
 
+    public void showDriver() {
+        System.out.printf("%-5d %-20s %-15s %-15s \n", id, name, address, numberphone,level);
     }
-
 }
