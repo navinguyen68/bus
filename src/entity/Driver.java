@@ -28,6 +28,10 @@ public class Driver {
     public Driver(Driver driver) {
     }
 
+    public Driver() {
+
+    }
+
     public int getId() {
         return id;
     }
@@ -68,8 +72,9 @@ public class Driver {
         this.level = level;
     }
     public void inputinfo(){
-        List<Driver> drivers = new ArrayList<>();
-        System.out.println("Nhap ma id lai xe: ");
+
+
+        
         this.id = Auto_id++;
         this.setId(new Scanner(System.in).nextInt());
         System.out.println("Nhap ten lai xe: ");
@@ -138,6 +143,6 @@ public class Driver {
         }}
 
     public void showDriver() {
-        System.out.printf("%-5d %-20s %-15s %-15s \n", id, name, address, numberphone,level);
+        System.out.printf("%-5d %-20s %-15s %-30s %-20s \n", id, name, address, numberphone,level);
     }
 }
