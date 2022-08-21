@@ -50,6 +50,7 @@ public class Mainrun {
                     StreetSytem.idcheckStreet(100);
                     break;
                 case 9:
+                    Register.driverRegister();
                     break;
                 case 10:
                     break;
