@@ -77,11 +77,11 @@ public class Driver implements Comparable<Driver>{
     @Override
     public String toString() {
         return "Information of Driver {" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", numberphone=" + numberphone +
-                ", level='" + level + '\'' +
+                "Ma lai xe=" + id +
+                ", Ten lai xe='" + name + '\'' +
+                ", Dia chi='" + address + '\'' +
+                ", So dien thoai=" + numberphone +
+                ", Bang lai ='" + level + '\'' +
                 '}';
 
     }

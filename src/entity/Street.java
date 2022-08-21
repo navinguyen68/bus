@@ -54,10 +54,9 @@ public class Street {
     @Override
     public String toString() {
         return "Street{" +
-                "idStreet=" + idStreet +
-                ", distance=" + distance +
-                ", stopNumber=" + stopNumber +
-                ", streets=" + streets +
+                "Ma tuyen duong=" + idStreet +
+                ", Khoang cach=" + distance +
+                ", Diem dung=" + stopNumber +
                 '}';
     }
     public void showStreet() {

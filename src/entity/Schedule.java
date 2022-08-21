@@ -51,13 +51,4 @@ public class Schedule {
                 '}';
     }
 
-    public void registerInfo(){
-        ArrayList<Driver> schedulearr = new ArrayList<>();
-        Driver driver1 = new Driver();
-        driver1.inputinfo();
-        schedulearr.add(driver1);
-        System.out.println("Nhap thong tin tuyen duong muon dang ky: ");
-        Street street1 = new Street();
-        street1.inputStreet();
-    }
 }

@@ -56,6 +56,10 @@ public class Mainrun {
                 case 11:
                     break;
                 case 12:
+                   break;
+                case 13:
+                    break;
+                case 14:
                     System.exit(0);
                     isExit = true;
             }
@@ -68,7 +72,7 @@ public class Mainrun {
         int choice = 1;
         do {
             choice = new Scanner(System.in).nextInt();
-            if (choice >= 1 && choice <= 13) {
+            if (choice >= 1 && choice <= 14) {
                 break;
             }
             System.out.println("Lua chon khong hop le !");
@@ -90,5 +94,6 @@ public class Mainrun {
         System.out.println("11. Sap xep danh sach phan cong theo ten");
         System.out.println("12. Sap xep tuyen dam nhan trong ngay ");
         System.out.println("13. Bang ke tong khoang cach trong ngay cua lai xe: ");
+        System.out.println("14. Thoat");
     }
 }
