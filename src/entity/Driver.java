@@ -5,6 +5,7 @@ import constant.LevelDriver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Driver implements Comparable<Driver>{
@@ -75,7 +76,7 @@ public class Driver implements Comparable<Driver>{
 
     @Override
     public String toString() {
-        return "Driver{" +
+        return "Information of Driver {" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
@@ -148,6 +149,10 @@ public class Driver implements Comparable<Driver>{
 
     @Override
     public int compareTo(Driver o) {
-        return this.id ;
+        return this.id;
     }
+    public boolean idCheck(Driver other) {
+        return Objects.equals(this.id, other.id);
+    }
+
 }
