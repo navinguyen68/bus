@@ -4,9 +4,8 @@ import entity.Driver;
 import entity.Schedule;
 import entity.Street;
 import logichandle.Register;
-import logichandle.Subcription;
+import logichandle.ManageInfo;
 
-import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -26,10 +25,10 @@ public class Mainrun {
             int functionchoice = functionchoice();
             switch (functionchoice) {
                 case 1:
-                    Subcription.showDriverlist(); // them lai xe
+                    ManageInfo.showDriverlist(); // them lai xe va hien thi lai xe
                     break;
                 case 2:
-                    Subcription.showStreetlist(); // them tuyen duong
+                    ManageInfo.showStreetlist(); // them tuyen duong
                     break;
                 case 3:
                     Register.driverRegister(); // he thong lai xe dang ky tuyen duong

@@ -1,19 +1,20 @@
 package entity;
 
+import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
 import constant.LevelDriver;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Driver {
+public class Driver implements Comparable<Driver>{
     private int id;
     public static int Auto_id = 10000;
     private String name;
     private String address;
     private int numberphone;
     private String level;
-    public Driver (int i) {}
+
 
 
 
@@ -71,10 +72,20 @@ public class Driver {
     public void setLevel(String level) {
         this.level = level;
     }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", numberphone=" + numberphone +
+                ", level='" + level + '\'' +
+                '}';
+
+    }
     public void inputinfo(){
-
-
-        
+        System.out.println("Nhap id lai xe: ");
         this.id = Auto_id++;
         this.setId(new Scanner(System.in).nextInt());
         System.out.println("Nhap ten lai xe: ");
@@ -86,17 +97,6 @@ public class Driver {
         System.out.println("Nhap trinh do lai xe: ");
         this.inputDriverType();
 
-    }
-
-    @Override
-    public String toString() {
-        return "Driver{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", numberphone=" + numberphone +
-                ", level='" + level + '\'' +
-                '}';
     }
 
     public void inputDriverType(){
@@ -142,7 +142,12 @@ public class Driver {
                 break;
         }}
 
-    public void showDriver() {
-        System.out.printf("%-5d %-20s %-15s %-30s %-20s \n", id, name, address, numberphone,level);
+    public void show(){
+        System.out.println(this);
+    }
+
+    @Override
+    public int compareTo(Driver o) {
+        return this.id ;
     }
 }

@@ -2,15 +2,19 @@ package entity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Schedule {
     private Driver driver;
-    private List<Street>streetList = new ArrayList<>();
-
-    public Schedule(Driver driver, List<Street> streetList) {
+    private Street street;
+    public int roundTotal;// lượt và tổng số lượt bé hơn 15
+    public Schedule(Driver driver, Street street, int roundTotal) {
         this.driver = driver;
-        this.streetList = streetList;
+        this.street = street;
+        this.roundTotal = roundTotal;
+    }
+
+    public Schedule() {
+
     }
 
     public Driver getDriver() {
@@ -21,19 +25,29 @@ public class Schedule {
         this.driver = driver;
     }
 
-    public List<Street> getStreetList() {
-        return streetList;
+    public Street getStreet() {
+        return street;
     }
 
-    public void setStreetList(List<Street> streetList) {
-        this.streetList = streetList;
+    public void setStreet(Street street) {
+        this.street = street;
+    }
+
+    public int getRoundTotal() {
+        return roundTotal;
+    }
+
+    public void setRoundTotal(int roundTotal) {
+        this.roundTotal = roundTotal;
     }
 
     @Override
     public String toString() {
         return "Schedule{" +
-                "driver=" + driver +
-                ", streetList=" + streetList +
+                ",idDriver=" + driver.getId() +
+                ",nameDriver =" + driver.getName()+
+                ", idstreet=" + street.getIdStreet() +
+                ", roundTotal=" + roundTotal +
                 '}';
     }
 
@@ -45,8 +59,5 @@ public class Schedule {
         System.out.println("Nhap thong tin tuyen duong muon dang ky: ");
         Street street1 = new Street();
         street1.inputStreet();
-    }
-    public void showSchedule(){
-    System.out.printf("%-5d %-20s \n", driver, streetList, toString());3
     }
 }

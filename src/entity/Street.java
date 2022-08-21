@@ -61,6 +61,6 @@ public class Street {
                 '}';
     }
     public void showStreet() {
-        System.out.printf("%-5d %-20s %-15s \n", idStreet, distance, stopNumber);
+        System.out.println(this);
     }
 }

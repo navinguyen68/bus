@@ -12,14 +12,12 @@ import java.util.Scanner;
 
 public class Register {
     public static void driverRegister() {
-        List<Schedule> scheduleList = new ArrayList<>();
         System.out.println("Nhap tong lai xe dang ky tuyen duong: ");
         int number = new Scanner(System.in).nextInt();
         for (int i = 0; i < number; i++) {
             System.out.println("Nhap thong tin lai xe thu" + (i + 1) + "la: ");
-            Schedule schedule = new Schedule(new Driver(), new ArrayList<>());
+            Schedule schedule = new Schedule();
             schedule.registerInfo();
-            scheduleList.add(schedule);
             }
         }
 
