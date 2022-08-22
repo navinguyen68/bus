@@ -5,16 +5,13 @@ import java.util.List;
 
 public class Schedule {
     private Driver driver;
-    private Street street;
+    private List<StreetArange> streetArange = new ArrayList<>() ;
     public int roundTotal;// lượt và tổng số lượt bé hơn 15
-    public Schedule(Driver driver, Street street, int roundTotal) {
+
+    public Schedule(Driver driver, List<StreetArange> streetArange, int roundTotal) {
         this.driver = driver;
-        this.street = street;
+        this.streetArange = streetArange;
         this.roundTotal = roundTotal;
-    }
-
-    public Schedule() {
-
     }
 
     public Driver getDriver() {
@@ -25,12 +22,12 @@ public class Schedule {
         this.driver = driver;
     }
 
-    public Street getStreet() {
-        return street;
+    public List<StreetArange> getStreetArange() {
+        return streetArange;
     }
 
-    public void setStreet(Street street) {
-        this.street = street;
+    public void setStreetArange(List<StreetArange> streetArange) {
+        this.streetArange = streetArange;
     }
 
     public int getRoundTotal() {
@@ -44,11 +41,10 @@ public class Schedule {
     @Override
     public String toString() {
         return "Schedule{" +
-                ",idDriver=" + driver.getId() +
-                ",nameDriver =" + driver.getName()+
-                ", idstreet=" + street.getIdStreet() +
+                "driver=" + driver +
+                ", streetArange=" + streetArange +
                 ", roundTotal=" + roundTotal +
                 '}';
     }
-
 }
+
