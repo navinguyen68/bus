@@ -32,6 +32,7 @@ public class StreetSytem {
     System.out.println("Kiem tra danh sach tuyen duong co rỗng không ");
     for(int i =0; i < streetLists.size(); i++) {
         if (streetLists != null) {
+            System.out.println("Danh sach rỗng");
             return false;
         }
     }return true;

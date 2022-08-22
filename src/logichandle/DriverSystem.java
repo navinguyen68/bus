@@ -47,7 +47,7 @@ public class DriverSystem {
         if (!isExisted) {
             System.out.printf("Khong tim thay ma lai xe nay\n", id);
         } else {
-            System.out.printf("Thong tin lai xe nay la: \n ", driverLists );
+            System.out.printf("Thong tin lai xe nay la: \n ",id );
 
         } return true;
     }
