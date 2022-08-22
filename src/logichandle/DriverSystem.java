@@ -25,31 +25,39 @@ public class DriverSystem {
 
     public static void showDriverlist() {
         System.out.println("Hien thi thong tin lai xe: ");
-        for (Driver drivers : driverLists) {
-            drivers.show();
-        }
+        /*for (Driver drivers : driverLists) {
+            drivers.show();}*/
+        driverLists.stream().forEach(s -> System.out.println(s));
+
     }
 
     public static void sortName() {
         System.out.println("Sap xep ten lai xe:");
         driverLists.stream().sorted(Comparator.comparing(Driver::getName)).forEach(System.out::println);
     }
-
-    public static boolean idcheckDriver(int id) {
-        boolean isExisted = false;
+    public static boolean isEmpty() {
+        System.out.println("Kiem tra danh sach tuyen duong co rỗng không ");
         for (int i = 0; i < driverLists.size(); i++) {
-            if (driverLists.get(i).getId() == id) {
-                isExisted = true;
-                driverLists.get(id).setId(id);
-                break;
+            if (driverLists != null) {
+                System.out.println("Danh sach co du lieu");
+                return false;
             }
         }
-        if (!isExisted) {
-            System.out.printf("Khong tim thay ma lai xe nay\n", id);
-        } else {
-            System.out.printf("Thong tin lai xe nay la: \n ",id );
+        return isEmpty();
+    }
 
-        } return true;
+    public static boolean idcheckDriver() {
+        boolean isExisted = false;
+        System.out.println("Xin moi nhap ma lai xe: ");
+        int id = new Scanner(System.in).nextInt();
+        for (int i = 0; i < driverLists.size(); i++) {
+            if (driverLists.get(i).getId() == id) {
+                isExisted = true;;
+                System.out.println("Thong tin lai xe nay la: " +driverLists.get(i));
+            } else {
+                System.out.printf("Khong tim thay ma lai xe nay %d\n", id);
+            }
+        } return isExisted;
     }
 }
 

@@ -21,38 +21,35 @@ public class StreetSytem {
     }
     public static void showStreetlist(){
             System.out.println("Hien thi thong tin tuyen duong");
-            int k = 1;
-            for (Street st : streetLists) {
-                System.out.println("Hien thi tuyen thu " + k + " la: ");
+          /*  for (Street st : streetLists) {
                 st.showStreet();
-            }
+            }*/
+        streetLists.stream().forEach(s -> System.out.println(s));
         }
 
     public static boolean isEmptyStreet(){
     System.out.println("Kiem tra danh sach tuyen duong co rỗng không ");
     for(int i =0; i < streetLists.size(); i++) {
         if (streetLists != null) {
-            System.out.println("Danh sach rỗng");
+            System.out.println("Danh sach co du lieu");
             return false;
         }
-    }return true;
+    }return isEmptyStreet();
 
 }
-    public static boolean idcheckStreet(int idS) {
+    public static boolean idcheckStreet() {
         boolean isExisted = false;
+        System.out.println("Nhap ma tuyen duong can tim kiem: ");
+        int ids = new Scanner(System.in).nextInt();
         for (int i = 0; i < streetLists.size(); i++) {
-            if (streetLists.get(i).getIdStreet() == idS) {
+            if (streetLists.get(i).getIdStreet() == ids) {
                 isExisted = true;
-                streetLists.get(idS).setIdStreet(idS);
-                break;
+                System.out.println("Ma tuyen duong co trong he thong: " + streetLists.get(i));
+            } else {
+                System.out.println("Ma tuyen duong khong ton tai");
             }
-        }
-        if (!isExisted) {
-            System.out.printf("Khong tim thay ma tuyen duong nay\n", idS);
-        } else {
-            System.out.printf("Thong tin tuyen duong la: \n ", streetLists );
-
-        } return true;
+        } return isExisted;
     }
+
 }
 

@@ -53,10 +53,10 @@ public class Street {
 
     @Override
     public String toString() {
-        return "Street{" +
-                "Ma tuyen duong=" + idStreet +
-                ", Khoang cach=" + distance +
-                ", Diem dung=" + stopNumber +
+        return "Tuyen duong {" +
+                "Ma tuyen duong:" + idStreet +
+                ", Khoang cach: " + distance +
+                ", Diem dung:" + stopNumber +
                 '}';
     }
     public void showStreet() {

@@ -35,7 +35,7 @@ public class Mainrun {
                     DriverSystem.sortName();
                     break;
                 case 4:
-                    DriverSystem.idcheckDriver(1); // vd nhap ma id = 1
+                    DriverSystem.idcheckDriver(); // vd nhap ma id = 1
                     break;
                 case 5:
                     StreetSytem.addStreet();
@@ -47,7 +47,7 @@ public class Mainrun {
                     StreetSytem.isEmptyStreet();
                     break;
                 case 8:
-                    StreetSytem.idcheckStreet(100);
+                    StreetSytem.idcheckStreet();
                     break;
                 case 9:
                     Register.driverRegister();
