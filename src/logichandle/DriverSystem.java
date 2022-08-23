@@ -54,7 +54,7 @@ public class DriverSystem {
             if (driverLists.get(i).getId() == id) {
                 isExisted = true;;
                 System.out.println("Thong tin lai xe nay la: " +driverLists.get(i));
-            } else {
+            } else if ( isExisted == false){
                 System.out.printf("Khong tim thay ma lai xe nay %d\n", id);
             }
         } return isExisted;

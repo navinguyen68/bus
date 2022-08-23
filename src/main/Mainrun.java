@@ -35,7 +35,7 @@ public class Mainrun {
                     DriverSystem.sortName();
                     break;
                 case 4:
-                    DriverSystem.idcheckDriver(); // vd nhap ma id = 1
+                    DriverSystem.idcheckDriver();
                     break;
                 case 5:
                     StreetSytem.addStreet();
@@ -53,6 +53,7 @@ public class Mainrun {
                     Register.driverRegister();
                     break;
                 case 10:
+
                     break;
                 case 11:
                     break;
@@ -85,7 +86,7 @@ public class Mainrun {
         System.out.println("1. Them thong tin lai xe vao danh sach lai xe : ");
         System.out.println("2. Hien thi thong tin lai xe trong danh sach : ");
         System.out.println("3. Sap xep ten lai xe theo danh sach : ");
-        System.out.println("4. Kiem tra danh sach lai xe co rong khong");
+        System.out.println("4. Kiem tra mã lái xe có tồn tại không");
         System.out.println("5. Them tuyen duong vao danh sach ");
         System.out.println("6. Hien thi thong tin tuyen duong");
         System.out.println("7. Kiem tra he thong tuyen duong co rong khong ");
