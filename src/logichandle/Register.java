@@ -1,12 +1,8 @@
 package logichandle;
 
-import entity.Driver;
 import entity.Schedule;
-import entity.Street;
-import main.Mainrun;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,27 +10,38 @@ public class Register {
     static List<Schedule> scheduleList = new ArrayList<>();
 
     public static void driverRegister() {
+        Schedule schedule = new Schedule();
+        scheduleDriver(schedule);
         boolean idcheck = false;
         System.out.println("Xin moi nhap ma lai xe cua ban:  ");
         int idnum = new Scanner(System.in).nextInt();
-        for (int i = 0; i < DriverSystem.driverLists.size(); ) {
-            if (DriverSystem.driverLists.get(i).getId() == idnum) {
-                idcheck= true;
+        for (int i = 0; i < DriverSystem.driverLists.size(); i++) {
+            if (DriverSystem.driverLists.get(i).getId() == idnum || schedule.getDriver().getId() == idnum) {
+                idcheck = true;
                 System.out.println("Thong tin lai xe nay" + DriverSystem.driverLists.get(i));
                 System.out.println("\n --- Xin moi dang ky tuyen duong --- \n");
                 System.out.println("Xin moi nhap ma tuyen duong muon dang ky");
             }
-                int is = new Scanner(System.in).nextInt();
-                for (int k = 0; k < StreetSytem.streetLists.size(); ) {
-                    if (StreetSytem.streetLists.get(k).getIdStreet() == is) {
-                        System.out.println("Thong tin tuyen duong muon dang ky la: " + StreetSytem.streetLists.get(k));
-                    } else {
-                        System.out.println("Ma lai xe khong ton tai. Xin moi nhap lai");
-                    }
-                } return;
+            int is = new Scanner(System.in).nextInt();
+            for (int k = 0; k < StreetSytem.streetLists.size(); k++) {
+                if (StreetSytem.streetLists.get(k).getIdStreet() == is || schedule.getStreetArange().get(k).getStreets().getIdStreet() == is) {
+                    System.out.println("Thong tin tuyen duong muon dang ky la: " + StreetSytem.streetLists.get(k));
+                } else {
+                    System.out.println("Ma lai xe khong ton tai. Xin moi nhap lai");
+                }
             }
+            return;
         }
     }
+    public static void scheduleDriver(Schedule schedule) {
+        scheduleList.add(schedule);
+      scheduleList.stream().forEach(s -> System.out.println(s));
+    }
+
+
+    public static void scheduleDriver() {
+    }
+}
 
 
        /*

@@ -53,6 +53,7 @@ public class Mainrun {
                     Register.driverRegister();
                     break;
                 case 10:
+                    Register.scheduleDriver();
 
                     break;
                 case 11:
